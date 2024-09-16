@@ -37,6 +37,13 @@
 			<version>2.6.0</version>
 		</dependency>
 
+		<!-- para guarad no se como porque no le entendi solo que era para guardar -->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
 
 		<!-- Fin de dependencias adicionales -->
 
