@@ -15,4 +15,12 @@ public class Accesorio {
     private Integer id;
 
     private String nombre;
+
+    @ManyToOne
+    @JoinColumn(name = "tipoDeAccesorio_id")
+    private TipoDeAccesorio tipoDeAccesorio;
+
+    private String descripcion;
+
+    private String urlFoto;
 }

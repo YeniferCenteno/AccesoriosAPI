@@ -10,7 +10,8 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class AccesorioGuardar implements Serializable{
+public class AccesorioModificar implements Serializable {
+    private Integer id;
     private String nombre;
     private Integer tipoDeAccesorioId;
     private String descripcion;
