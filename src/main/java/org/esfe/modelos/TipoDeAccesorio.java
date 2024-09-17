@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -14,4 +16,9 @@ public class TipoDeAccesorio {
     private Integer id;
 
     private String nombre;
+
+    @OneToMany (mappedBy = "tipoDeAccesorio")
+
+    private List<Accesorio> accesorios;
+
 }
