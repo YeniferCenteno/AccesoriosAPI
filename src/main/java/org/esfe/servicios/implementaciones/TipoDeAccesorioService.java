@@ -24,15 +24,17 @@ public class TipoDeAccesorioService implements ITipoDeAccesorioService {
     @Autowired
     private ModelMapper modelMapper;
 
+//    este es para mostrar todo en una sola pagina
     @Override
     public List<TipoDeAccesorioSalida> obtenerTodos() {
         List<TipoDeAccesorio> tipoDeAccesorios = tipoDeAccesorioRepository.findAll();
 
         return tipoDeAccesorios.stream()
-                .map(tipoDeAccesorio -> modelMapper.map(tipoDeAccesorios, TipoDeAccesorioSalida.class))
+                .map(tipoDeAccesorio -> modelMapper.map(tipoDeAccesorio, TipoDeAccesorioSalida.class))
                 .collect(Collectors.toList());
     }
 
+    // este es para mostrar una5 en cada pagina
     @Override
     public Page<TipoDeAccesorioSalida> obtenerTodosPaginados(Pageable pageable) {
         Page<TipoDeAccesorio> page = tipoDeAccesorioRepository.findAll(pageable);
