@@ -22,5 +22,7 @@ public class Accesorio {
 
     private String descripcion;
 
+    @Column(name = "url_image")
     private String urlFoto;
+
 }

@@ -7,6 +7,7 @@ import org.esfe.servicios.interfaces.IAccesorioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,8 +49,8 @@ public class AccesorioController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping
-    public ResponseEntity<AccesorioSalida> crear(@RequestBody AccesorioGuardar accesorioGuardar){
+    @PostMapping(value = "",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<AccesorioSalida> crear(@ModelAttribute AccesorioGuardar accesorioGuardar){
         AccesorioSalida accesorio = accesorioService.crear(accesorioGuardar);
         return ResponseEntity.ok(accesorio);
     }
