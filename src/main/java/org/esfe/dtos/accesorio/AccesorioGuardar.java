@@ -5,6 +5,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import org.esfe.modelos.TipoDeAccesorio;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 
@@ -14,5 +15,5 @@ public class AccesorioGuardar implements Serializable{
     private String nombre;
     private Integer tipoDeAccesorioId;
     private String descripcion;
-    private String urlFoto;
+    private MultipartFile file;
 }
