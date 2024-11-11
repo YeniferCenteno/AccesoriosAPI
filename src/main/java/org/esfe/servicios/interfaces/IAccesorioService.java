@@ -13,7 +13,7 @@ public interface IAccesorioService {
 
     List<AccesorioSalida> obtenerTodos();
 
-    Page<AccesorioSalida> obtenerTodosPaginados(Pageable pageable);
+    Page<AccesorioSalida> obtenerTodosPaginados(String nombre, Pageable pageable);
 
     AccesorioSalida obtenerPorId(Integer id);
 

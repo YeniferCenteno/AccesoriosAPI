@@ -20,14 +20,19 @@ public class AccesorioController {
     private IAccesorioService accesorioService;
 
     @GetMapping
-    public ResponseEntity<Page<AccesorioSalida>> mostrarTodosPaginados(Pageable pageable){
-        Page<AccesorioSalida> accesorios = accesorioService.obtenerTodosPaginados(pageable);
-        if(accesorios.hasContent()){
+    public ResponseEntity<Page<AccesorioSalida>> mostrarTodosPaginados(
+            @RequestParam(value = "nombre", required = false) String nombre,
+            Pageable pageable) {
+
+        Page<AccesorioSalida> accesorios = accesorioService.obtenerTodosPaginados(nombre, pageable);
+
+        if (accesorios.hasContent()) {
             return ResponseEntity.ok(accesorios);
         }
 
         return ResponseEntity.notFound().build();
     }
+
 
     @GetMapping("/lista")
     public ResponseEntity<List<AccesorioSalida>> mostrarTodos(){
