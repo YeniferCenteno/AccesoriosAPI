@@ -48,8 +48,8 @@ public class AccesorioService implements IAccesorioService {
     }
 
     @Override
-    public Page<AccesorioSalida> obtenerTodosPaginados(Pageable pageable) {
-        Page<Accesorio> page = accesorioRepository.findAll(pageable);
+    public Page<AccesorioSalida> obtenerTodosPaginados(String nombre, Pageable pageable) {
+        Page<Accesorio> page = accesorioRepository.findByNombreContaining(nombre, pageable);
 
         List<AccesorioSalida> AccesoriosDto = page.stream()
                 .map(Accesorio -> modelMapper.map(Accesorio, AccesorioSalida.class))
